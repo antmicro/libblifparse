@@ -4,6 +4,6 @@
 #include "blifparse.hpp"
 namespace blifparse {
 
-    void blif_error_wrap(Callback& callback, const int line_no, const std::string& near_text, const char* fmt, ...);
+void blif_error_wrap(Callback& callback, const int line_no, const std::string& near_text, const char* fmt, ...);
 }
 #endif

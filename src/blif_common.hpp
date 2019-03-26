@@ -42,5 +42,5 @@ struct Param {
     std::string value;
 };
 
-} //namespace
+}  // namespace blifparse
 #endif

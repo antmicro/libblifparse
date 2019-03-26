@@ -6,7 +6,6 @@
 #include "blif_lexer.hpp"
 #include "blif_error.hpp"
 
-
 namespace blifparse {
 
 //.conn [Extended BLIF]
@@ -41,7 +40,7 @@ void blif_parse_filename(std::string filename, Callback& callback) {
 
 void blif_parse_filename(const char* filename, Callback& callback) {
     FILE* infile = std::fopen(filename, "r");
-    if(infile != NULL) {
+    if (infile != NULL) {
         //Parse the file
         blif_parse_file(infile, callback, filename);
 
@@ -52,7 +51,6 @@ void blif_parse_filename(const char* filename, Callback& callback) {
 }
 
 void blif_parse_file(FILE* blif_file, Callback& callback, const char* filename) {
-
     //Initialize the lexer
     Lexer lexer(blif_file, callback);
 
@@ -63,11 +61,11 @@ void blif_parse_file(FILE* blif_file, Callback& callback, const char* filename) 
     callback.start_parse();
 
     //Tell the caller the file name
-    callback.filename(filename); 
+    callback.filename(filename);
 
     //Do the actual parse
     int error = parser.parse();
-    if(error) {
+    if (error) {
         blif_error_wrap(callback, 0, "", "File failed to parse.\n");
     }
 
@@ -75,4 +73,4 @@ void blif_parse_file(FILE* blif_file, Callback& callback, const char* filename) 
     callback.finish_parse();
 }
 
-}
+}  // namespace blifparse

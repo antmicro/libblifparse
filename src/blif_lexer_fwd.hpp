@@ -3,7 +3,7 @@
 
 //Forward declaration used by parser definition
 namespace blifparse {
-    class Lexer;
+class Lexer;
 }
 
 #endif

@@ -5,4 +5,4 @@
 
 namespace blifparse {
 
-} //namespace
+}  // namespace blifparse
